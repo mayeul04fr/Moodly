@@ -1,5 +1,5 @@
 {
-  "name": "strapi-moodle",
+  "name": "strapitest",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
@@ -26,6 +26,6 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "08028a01-3a0c-4123-9e85-d8521786dbd6"
+    "uuid": "edf9b0b0-cbca-41a6-9880-8e262f4394ed"
   }
 }
