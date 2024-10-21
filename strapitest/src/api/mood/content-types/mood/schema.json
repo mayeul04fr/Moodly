@@ -4,7 +4,8 @@
   "info": {
     "singularName": "mood",
     "pluralName": "moods",
-    "displayName": "mood"
+    "displayName": "mood",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -36,6 +37,9 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "moods"
+    },
+    "date": {
+      "type": "date"
     }
   }
 }

@@ -6,6 +6,7 @@ export interface ApiMoodMood extends Struct.CollectionTypeSchema {
     singularName: 'mood';
     pluralName: 'moods';
     displayName: 'mood';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -47,6 +48,7 @@ export interface ApiMoodMood extends Struct.CollectionTypeSchema {
       'manyToOne',
       'plugin::users-permissions.user'
     >;
+    date: Schema.Attribute.Date;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
