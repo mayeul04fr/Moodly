@@ -2,7 +2,7 @@
   <nav class="navbar">
     <!-- Section gauche : Bonjour Username -->
     <div v-if="isLoggedIn" class="navbar-left">
-      <router-link to="/" class="nav-link">Bonjour, {{ username }}</router-link>
+      <router-link to="/" class="nav-link">Bonjour {{ username }}</router-link>
     </div>
 
     <!-- Section droite : Voir mon équipe et Créer un utilisateur -->

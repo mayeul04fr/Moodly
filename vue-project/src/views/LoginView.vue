@@ -1,6 +1,6 @@
 <template>
   <div class="login-container">
-    <h2 class="login-title">Connexion</h2>
+    <h2 class="login-title">Bienvenue sur Moodly !</h2>
     <form @submit.prevent="loginUser" class="login-form">
       <div class="form-group">
         <label for="email">Email :</label>
@@ -81,66 +81,91 @@ export default {
 
 <style scoped>
 .login-container {
-  width: 400px; /* Largeur fixe pour un aspect propre */
-  margin: auto; /* Centrer le conteneur */
-  padding: 20px; /* Espacement interne */
-  border: 2px solid #D8DBF4; /* Bordure légère */
-  border-radius: 8px; /* Coins arrondis */
-  background: linear-gradient(135deg, #F4F4F9, #F2ECE6); /* Dégradé en diagonale */
-  box-shadow: 0 2px 10px #0000001a; /* Ombre pour profondeur */
+  width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #D8DBF4;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #F4F4F9, #F2ECE6);
+  box-shadow: 0 2px 10px #0000001a;
 }
 
 .login-title {
-  text-align: center; /* Centrer le titre */
-  color: #333; /* Couleur sombre pour le titre */
-  margin-bottom: 20px; /* Espacement sous le titre */
+  text-align: center;
+  background: linear-gradient(135deg, #7C86ED, #F0A3B0); /* Dégradé de couleur pour le texte */
+  -webkit-background-clip: text;
+  color: transparent; /* Utilisation de dégradé pour la couleur du texte */
+  font-size: 28px; /* Taille de la police plus grande */
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+  animation: fadeIn 1.5s ease-in-out; /* Animation d'apparition */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px); /* Légère translation vers le haut */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Retour à la position initiale */
+  }
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #555;
+  font-size: 16px; /* Taille de la police réduite pour le paragraphe */
+  margin-bottom: 20px; /* Espacement entre le titre et le formulaire */
 }
 
 .form-group {
-  margin-bottom: 15px; /* Espacement entre les groupes de champs */
+  margin-bottom: 15px;
 }
 
 label {
-  display: block; /* Étiquettes en bloc pour occupation de l'espace complet */
-  margin-bottom: 5px; /* Espacement sous l'étiquette */
-  font-weight: bold; /* Étiquettes en gras */
-  color: #555; /* Couleur des étiquettes */
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
 }
 
 .form-input {
-  width: 100%; /* Prendre toute la largeur */
-  padding: 10px; /* Espacement interne */
-  border: 1px solid #ccc; /* Bordure légère */
-  border-radius: 4px; /* Coins arrondis pour les champs */
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Ombre interne */
-  transition: border-color 0.3s; /* Transition douce pour les bordures */
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s;
 }
 
 .form-input:focus {
-  border-color: #007bff; /* Couleur de bordure au focus */
-  outline: none; /* Pas de contour par défaut */
+  border-color: #007bff;
+  outline: none;
 }
 
 .submit-button {
-  width: 100%; /* Prendre toute la largeur */
-  padding: 10px; /* Espacement interne */
-  border: none; /* Pas de bordure */
-  border-radius: 4px; /* Coins arrondis */
-  background-color: #7C86ED; /* Couleur de fond du bouton */
-  color: white; /* Couleur du texte */
-  font-size: 16px; /* Taille du texte */
-  cursor: pointer; /* Curseur pointeur pour le bouton */
-  transition: background-color 0.3s; /* Transition douce pour la couleur de fond */
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #7C86ED;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .submit-button:hover {
-  background-color: #F0A3B0; /* Couleur de fond au survol */
-  transform: scale(1.05); /* Agrandissement léger au survol */
+  background-color: #F0A3B0;
+  transform: scale(1.05);
 }
 
 .error {
-  color: red; /* Couleur rouge pour les messages d'erreur */
-  text-align: center; /* Centrer le message d'erreur */
-  margin-top: 15px; /* Espacement au-dessus du message d'erreur */
+  color: red;
+  text-align: center;
+  margin-top: 15px;
 }
 </style>

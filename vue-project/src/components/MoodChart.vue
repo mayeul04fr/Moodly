@@ -1,5 +1,5 @@
 <template>
-  <h2 class="chart-title">Analyse des humeurs par semaine</h2>
+  <h2 class="chart-title">Moyennes des humeurs de votre équipe</h2>
   <div class="chart-container">
     <canvas ref="chartCanvas"></canvas>
   </div>
@@ -22,7 +22,7 @@ export default {
     const chartCanvas = ref(null);
     let chartInstance = null;
 
-    // Fonction pour obtenir la semaine de l'année à partir d'une date
+    // Fonction pour obtenir la semaine et l'année à partir d'une date
     const getWeekNumber = (date) => {
       const d = new Date(
         Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
@@ -31,7 +31,16 @@ export default {
       d.setUTCDate(d.getUTCDate() + 4 - dayNum);
       const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
       const weekNo = Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
-      return `Semaine-${weekNo}`;
+      return `${d.getUTCFullYear()}-Semaine-${weekNo}`; // Inclure l'année dans l'étiquette de la semaine
+    };
+
+    // Fonction pour trier les semaines dans l'ordre chronologique
+    const sortWeeks = (weeks) => {
+      return weeks.sort((a, b) => {
+        const [yearA, , weekA] = a.split('-').map(str => parseInt(str, 10));
+        const [yearB, , weekB] = b.split('-').map(str => parseInt(str, 10));
+        return yearA === yearB ? weekA - weekB : yearA - yearB;
+      });
     };
 
     // Calculer la moyenne des valeurs
@@ -51,8 +60,10 @@ export default {
         return acc;
       }, {});
 
+      // Extraire et trier les semaines
+      const weeks = sortWeeks(Object.keys(moodsByWeek));
+
       // Préparer les données par indicateur et par semaine
-      const weeks = Object.keys(moodsByWeek);
       const stressData = [];
       const efficaciteData = [];
       const engagementData = [];
@@ -85,7 +96,7 @@ export default {
       chartInstance = new Chart(chartCanvas.value, {
         type: "bar",
         data: {
-          labels: weeks,
+          labels: weeks,  // Afficher les semaines triées
           datasets: [
             {
               label: "Stress",
@@ -159,13 +170,15 @@ export default {
 };
 </script>
 
+
 <style scoped>
 .chart-container {
   width: 50%;
   position: relative;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  background-color: white;
+  border: 2px solid #D8DBF4; /* Bordure légère */
+  border-radius: 8px; /* Coins arrondis */
+  background: linear-gradient(135deg, #F4F4F9, #F2ECE6); /* Dégradé en diagonale */
+  box-shadow: 0 2px 10px #0000001a; /* Ombre pour profondeur */
   padding: 20px;
 }
 

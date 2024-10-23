@@ -2,7 +2,7 @@
   <div class="home-container">
     <MoodChart :moods="moods" />
     <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
-    <button @click="goToDetails" class="details-button">Voir les graphiques de tous les utilisateurs</button>
+    <button @click="goToDetails" class="details-button">Vue singulière par employé</button>
   </div>
 </template>
 
