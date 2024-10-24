@@ -15,7 +15,7 @@ export interface ApiMoodMood extends Struct.CollectionTypeSchema {
     satisfaction: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {
-          min: 1;
+          min: 0;
           max: 4;
         },
         number
@@ -23,7 +23,7 @@ export interface ApiMoodMood extends Struct.CollectionTypeSchema {
     stress: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {
-          min: 1;
+          min: 0;
           max: 4;
         },
         number
@@ -31,7 +31,7 @@ export interface ApiMoodMood extends Struct.CollectionTypeSchema {
     engagement: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {
-          min: 1;
+          min: 0;
           max: 4;
         },
         number
@@ -39,7 +39,7 @@ export interface ApiMoodMood extends Struct.CollectionTypeSchema {
     efficacite: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {
-          min: 1;
+          min: 0;
           max: 4;
         },
         number
