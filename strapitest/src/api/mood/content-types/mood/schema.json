@@ -15,22 +15,22 @@
     "satisfaction": {
       "type": "integer",
       "max": 4,
-      "min": 0
+      "min": 1
     },
     "stress": {
       "type": "integer",
       "max": 4,
-      "min": 0
+      "min": 1
     },
     "engagement": {
       "type": "integer",
       "max": 4,
-      "min": 0
+      "min": 1
     },
     "efficacite": {
       "type": "integer",
       "max": 4,
-      "min": 0
+      "min": 1
     },
     "users_permissions_user": {
       "type": "relation",
